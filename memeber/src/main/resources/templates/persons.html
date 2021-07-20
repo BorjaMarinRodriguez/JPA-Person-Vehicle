@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+<title>Benvinguts a la Classe Person & Vehicle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" th:href="@{/css/w3style/w3.css}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+<head>
+    <title>Benvinguts a la Classe Person & Vehicle</title>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+		<table class="w3-table-all w3-card-4 w3-padding-64 w3-margin" style="width: 80%">
+			<tr class="w3-black w3-hover-teal">
+				<td>Id</td>
+				<td>Nom</td>
+				<td>Cognom</td>
+				<td>Edat</td>
+				<td>Localització</td>
+				<td>email</td>
+					<td>operartion</td>
+				
+			</tr>
+			<tr th:each="person:${personListfromControllerAndDB}">
+
+			<td th:text="${person.id}"></td>
+				<td th:text="${person.name}"></td>
+				<td th:text="${person.surname}"></td>
+				<td th:text="${person.age}"></td>
+				<td th:text="${person.location}"></td>
+				<td th:text="${person.email}"></td>
+				
+
+				<td><a th:href="@{deletePerson(id=${person.id})}"
+					class="w3-button w3-red">Borrar</a> <a
+					th:href="@{detailPerson(id=${person.id})}"
+					class="w3-button w3-teal">Info</a> <a
+					th:href="@{updatePerson(id=${person.id})}"
+					class="w3-button w3-blue">Actualitzar</a></td>
+
+
+			</tr>
+		</table>
+
+</div>
+
+</body>
+</html>
