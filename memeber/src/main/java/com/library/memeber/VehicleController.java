@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 			
 			boxToView.addAttribute("vehiclesfromController", vehicleRepository.findAll() );
 			
-			return "vehicle.html";
+			return "vehicles.html";
 		}
 		
 		@RequestMapping("/newVehicle")
