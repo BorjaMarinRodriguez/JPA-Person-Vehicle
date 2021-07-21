@@ -70,7 +70,7 @@ public class HomeController {
 					faker.name().lastName(),
 					faker.number().numberBetween(16, 65), 
 					
-					faker.address().buildingNumber(),
+					faker.address().fullAddress(),
 					faker.name().firstName() + "@java.com"));
 
 			count++;
