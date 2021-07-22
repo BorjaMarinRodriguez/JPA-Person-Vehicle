@@ -21,17 +21,17 @@ public class Vehicle {
 	private String type;
 	private String type2;
 	private String value;
-	private boolean insured;
+	
 	
 	
 	//Constructors
-	public Vehicle(String name, String type, String type2, String value, boolean insured) {
+	public Vehicle(String name, String type, String type2, String value) {
 		super();
 		this.name = name;
 		this.type = type;
 		this.type2 = type2;
 		this.value = value;
-		this.insured = insured;
+		
 	}
 
 
@@ -41,6 +41,16 @@ public class Vehicle {
 
 
 	// Getters i Setters
+	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	
 	public String getName() {
 		return name;
@@ -82,22 +92,14 @@ public class Vehicle {
 	}
 
 
-	public boolean isInsured() {
-		return insured;
-	}
-
-
-	public void setInsured(boolean insured) {
-		this.insured = insured;
-	}
+	
 
 
 	// toString
 	
 	@Override
 	public String toString() {
-		return "Vehicle [name=" + name + ", type=" + type + ", type2=" + type2 + ", value=" + value + ", insured="
-				+ insured + "]";
+		return "Vehicle [name=" + name + ", type=" + type + ", type2=" + type2 + ", value=" + value + "]";
 	}
 	
 	
