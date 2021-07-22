@@ -19,6 +19,7 @@ public class HomeController {
 
 	@Autowired
 	private PersonRepository personRepository;
+	private VehicleRepository vehicleRepository;
 	
 	//home
 	@RequestMapping({ "/home", "/" })
@@ -70,7 +71,7 @@ public class HomeController {
 					faker.name().lastName(),
 					faker.number().numberBetween(16, 65), 
 					
-					faker.address().buildingNumber(),
+					faker.address().fullAddress(),
 					faker.name().firstName() + "@java.com"));
 
 			count++;
@@ -78,6 +79,63 @@ public class HomeController {
 
 		return "redirect:/person/allPersons";
 	}
+	
+	
+	// Omplir la base de dades amb Vehicle
+		@RequestMapping({ "/fillinVehicle" })
+		public String finInDB() {
+
+			return "fillinvehicle.html";
+		}
+
+		@RequestMapping({ "/fillinVehicle" })
+		public String fillInDBVehicle(int qtyToCreate) {
+
+			String alphabetChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!·$%&/()=?¿?=)()/*-+^*Ç¨_:;;:_+/+/";
+
+			// int i = 0;
+			char stringRandom1, stringRandom2, stringRandom3;
+			/*
+			 * while (i < 10) { char charRandom =
+			 * alphabetChars.charAt(createIntRandom(alphabetChars.length())); stringRandom *
+			 * += stringRandom + charRandom;
+			 * 
+			 * }
+			 */
+
+			Faker faker = new Faker();
+			Random rand = new Random();
+			int max = 1525;
+			int count = 0;
+
+			while (count < qtyToCreate) {
+
+				stringRandom1 = alphabetChars.charAt(createIntRandom(alphabetChars.length()));
+				stringRandom2 = alphabetChars.charAt(createIntRandom(alphabetChars.length()));
+				stringRandom3 = alphabetChars.charAt(createIntRandom(alphabetChars.length()));
+				int intRandom = rand.nextInt(max);
+
+				/*
+				 * boolean randomPublished; if ((intRandom % 2) == 0) { randomPublished = true;
+				 * } else { randomPublished = false; }
+				 */
+
+				personRepository.save(new Vehicle(
+						faker.name().name(), 
+						faker.name().type(),
+						faker.name().type2(),
+						faker.number().value2(),
+						
+						faker.number().numberBetween(16, 65), 
+						
+						
+						faker.name().firstName() + "@java.com"));
+
+				count++;
+			}
+
+			return "redirect:/person/allPersons";
+		}
 
 	//-------------------------- error path website ----------------------------
 	@RequestMapping({ "*", "*/*", "*/*/*" })
@@ -106,6 +164,7 @@ public class HomeController {
 		return intRandom;
 
 	}
+	//
 
 	
 
