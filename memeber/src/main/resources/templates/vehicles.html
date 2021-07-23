@@ -28,7 +28,7 @@
 				<td>tipus</td>
 				<td>tipus2</td>
 				<td>valor</td>
-				<td>assegurat?</td>
+				
 			</tr>
 			<tr th:each="vehicle:${vehiclesfromController}">
 				<td th:text="${vehicle.id}"></td>
@@ -36,7 +36,7 @@
 				<td th:text="${vehicle.type}"></td>
 				<td th:text="${vehicle.type2}"></td>
 				<td th:text="${vehicle.value}"></td>
-				<td th:text="${vehicle.insured}"></td>
+				
 			</tr>
 		</table>
 

@@ -20,12 +20,12 @@ public class Vehicle {
 	private String name;
 	private String type;
 	private String type2;
-	private String value;
+	private int value;
 	
 	
 	
 	//Constructors
-	public Vehicle(String name, String type, String type2, String value) {
+	public Vehicle(String name, String type, String type2, int value) {
 		super();
 		this.name = name;
 		this.type = type;
@@ -82,14 +82,6 @@ public class Vehicle {
 	}
 
 
-	public String getValue() {
-		return value;
-	}
-
-
-	public void setValue(String value) {
-		this.value = value;
-	}
 
 
 	
@@ -97,6 +89,16 @@ public class Vehicle {
 
 	// toString
 	
+	public int getValue() {
+		return value;
+	}
+
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Vehicle [name=" + name + ", type=" + type + ", type2=" + type2 + ", value=" + value + "]";

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<title>Benvinguts a la Classe Person & Vehicle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" th:href="@{/css/w3style/w3.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<title>Benvinguts a la Classe Person & Vehicle</title>
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+
+
+
+
+
+
+
+<div class="w3-container w3-card-4 w3-display-middle w3-center"
+	style="width: 50%;">
+
+	<p>Quants vehicles vols crear</p>
+
+	<a th:href="@{/fillinVehicleqty(qtyToCreate=10)}"
+		class="w3-button w3-teal">Crea 10 vehicles</a>
+	<p></p>
+	<a th:href="@{/fillinvehicle(qtyToCreate=100)}"
+		class="w3-button w3-teal">Crea 100 vehicles</a>
+	<p></p>
+	<a th:href="@{/fillinvehicle(qtyToCreate=1000)}"
+		class="w3-button w3-teal">Crea 1000 vehicles</a>
+	<p></p>
+	<a th:href="@{/fillinvehicle(qtyToCreate=5000)}"
+		class="w3-button w3-teal">Crea 5000 vehicles</a>
+	<p></p>
+	<a th:href="@{/fillinvehicle(qtyToCreate=10000)}"
+		class="w3-button w3-teal">Crea 10000 vehicles</a>
+
+	<p>Borrar totes els vehicles</p>
+
+	<a th:href="@{/vehicle/deleteAllVehicles}" class="w3-button w3-red">Borrar tots els cotxes</a>
+	<p></p>
+	<p></p>
+
+</div>
+</div></body>
+</html>

@@ -83,13 +83,15 @@ public class HomeController {
 	
 	// Omplir la base de dades amb Vehicle
 		@RequestMapping({ "/fillinVehicle" })
-		public String finInDB() {
+		public String finInDB1() {
 
 			return "fillinvehicle.html";
 		}
 
-		@RequestMapping({ "/fillinVehicle" })
+		@RequestMapping("/fillinVehicleqty")
 		public String fillInDBVehicle(int qtyToCreate) {
+			
+			System.out.println(qtyToCreate);
 
 			String alphabetChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!·$%&/()=?¿?=)()/*-+^*Ç¨_:;;:_+/+/";
 
@@ -120,21 +122,19 @@ public class HomeController {
 				 * } else { randomPublished = false; }
 				 */
 
-				personRepository.save(new Vehicle(
+				vehicleRepository.save(new Vehicle(
 						faker.name().name(), 
-						faker.name().type(),
-						faker.name().type2(),
-						faker.number().value2(),
-						
-						faker.number().numberBetween(16, 65), 
+						faker.aviation().aircraft(),
+						faker.superhero().power(),
+						faker.number().numberBetween(5, 10000)));
 						
 						
-						faker.name().firstName() + "@java.com"));
+						
 
 				count++;
 			}
 
-			return "redirect:/person/allPersons";
+			return "redirect:/vehicle/allVehicles";
 		}
 
 	//-------------------------- error path website ----------------------------
