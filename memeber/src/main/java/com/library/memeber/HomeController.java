@@ -88,8 +88,10 @@ public class HomeController {
 			return "fillinvehicle.html";
 		}
 
-		@RequestMapping({ "/fillinVehicle2" })
+		@RequestMapping("/fillinVehicleqty")
 		public String fillInDBVehicle(int qtyToCreate) {
+			
+			System.out.println(qtyToCreate);
 
 			String alphabetChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!·$%&/()=?¿?=)()/*-+^*Ç¨_:;;:_+/+/";
 
